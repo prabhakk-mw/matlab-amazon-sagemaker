@@ -25,16 +25,16 @@ You can go to "Notebook instance" in the SageMaker console and click "Open Jupyt
 Running MATLAB via Processing Job:
 ----------------------------------
 
-```java
+```python
 processor = Processor(
-    image_uri = processing_repository_uri,
-    ...
+    image_uri = processing_repository_uri,
+    ...
 )
 ```
 
 This is `processing_repository_uri`  is the URI of our docker image which we generated in the notebook and uploaded to ECR. 
 
-```java
+```bash
 FROM mathworks/matlab-deep-learning
 USER root
 CMD ["matlab", "-batch", "cd /opt/ml/processing/src_files; main; exit"]
@@ -42,12 +42,12 @@ CMD ["matlab", "-batch", "cd /opt/ml/processing/src_files; main; exit"]
 
  In our Dockerfile, we changed the `CMD` to run the script located at `/opt/ml/processing/src_file` location. 
 
-```java
+```python
 processor.run(
     inputs=
     [ProcessingInput(
-        source='/home/ec2-user/SageMaker/main.m',
-        destination='/opt/ml/processing/src_files/'),
+        source="/home/ec2-user/SageMaker/main.m",
+        destination="/opt/ml/processing/src_files/"),
     outputs = [
         ProcessingOutput(
             output_name="results",

@@ -7,13 +7,6 @@ Consider a scenario where you have written MATLAB scripts for training & validat
 
 In this blog, we take [this example](https://www.mathworks.com/help/deeplearning/ug/create-simple-deep-learning-network-for-classification.html) from Deep Learning toolbox in MATLAB - which create a simple Deep Learning Network for classification on image dataset - and run this on MATLAB SageMaker using Processing job.  
 
-Why SageMaker?
---------------
-
-1.  Pay only what you use - useful for Deep Learning tasks
-2.  Can link GitHub account with the notebook instances
-3.  Easy to change the instance-type via processing jobs
-4.  Can be easily used for elastic inference (if used for model hosting)
 
 Launching a SageMaker instance: 
 --------------------------------

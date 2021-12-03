@@ -1,11 +1,11 @@
 What is this blog about?
 ------------------------
 
-This blog talks about how to run MATLAB code inside the SageMaker environment. This is especially helpful for machine learning, deep learning & computer vision workflows which may require high processing power, easily available via cloud solutions. 
+This blog talks about how to run MATLAB code inside the [Amazon SageMaker](https://aws.amazon.com/sagemaker/)  environment. This is especially helpful for machine learning, deep learning & computer vision workflows which may require high processing power, easily available via cloud solutions. 
 
-Consider a scenario where you have written MATLAB scripts for training & validation on your dataset - but you see your local system is not powerful enough to run these extensive deep learning pipelines. This is where this blog can help you - we show how to take an existing deep learning solution and run it on cloud using Amazon SageMaker. You do not have to spend time configuring your EC2 instances, you can directly launch a Jupyter notebook via SageMaker and can run MATLAB code via Processing jobs in cloud. You can also change the instance type of each processing job depending on your task. 
+Consider a scenario where you have written MATLAB scripts for training & validation on your dataset - but you see your local system is not powerful enough to run these extensive deep learning pipelines. This is where this blog can help you - we show how to take an existing deep learning solution and run it on cloud using Amazon SageMaker. You do not have to spend time configuring your EC2 instances, you can directly launch a Jupyter notebook via SageMaker and can run MATLAB code via Processing jobs in SageMaker. You can also change the instance type of each processing job depending on your task. 
 
-In this blog, we take [this example](https://www.mathworks.com/help/deeplearning/ug/create-simple-deep-learning-network-for-classification.html) from Deep Learning toolbox in MATLAB - which create a simple Deep Learning Network for classification on image dataset - and run this on MATLAB SageMaker using Processing job.  
+In this blog, we take [this example](https://www.mathworks.com/help/deeplearning/ug/create-simple-deep-learning-network-for-classification.html) from the Deep Learning toolbox in MATLAB - which create a simple Deep Learning Network for classification on image dataset - and run this code on SageMaker using Processing job.
 
 
 Launching a SageMaker instance: 
@@ -13,7 +13,7 @@ Launching a SageMaker instance: 
 
 Go to [SageMaker console](https://console.aws.amazon.com/sagemaker/home?region=us-east-1#/notebook-instances) and select notebook instances to launch a SageMaker notebook instance. 
 
-While launching the instance, go to Additional Configurations and increase the volume size of the notebook from default value of 5 GB to 25GB. Note that the IAM role that you select for the notebook should have the permission to read from [Amazon S3 buckets](https://s3.console.aws.amazon.com/s3/home) and read/write to [Amazon ECR repositories](https://console.aws.amazon.com/ecr/repositories). Have a look at [this](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.IAM.S3CreatePolicy.html) and [this](https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html) documentation from Amazon on how to set the IAM roles. 
+While launching the instance, go to Additional Configurations and increase the volume size of the notebook from default value of 5 GB to 25 GB. Note that the IAM role that you select for the notebook should have the permissions to read from [Amazon S3 buckets](https://s3.console.aws.amazon.com/s3/home) and read/write to [Amazon ECR repositories](https://console.aws.amazon.com/ecr/repositories). Have a look at [this](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.IAM.S3CreatePolicy.html) and [this](https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html) documentation from Amazon on how to set the IAM roles. 
 
 Everything else can remain as default values. 
 
@@ -32,7 +32,7 @@ processor = Processor(
 )
 ```
 
-This is `processing_repository_uri`  is the URI of our docker image which we generated in the notebook and uploaded to ECR. 
+This `processing_repository_uri`  is the URI of our docker image which we generated in the notebook and uploaded to ECR. 
 
 ```bash
 FROM mathworks/matlab-deep-learning
@@ -57,7 +57,7 @@ processor.run(
 )
 ```
 
-Finally, in our processor.run() command, we mount our local `main.m` to CMD location of the Dockerfile so this scipt is run inside the processing job. 
+Finally, in our `processor.run()` command, we mount our local `main.m` to CMD location of the Dockerfile so this scipt is run inside the processing job. 
 
   
 

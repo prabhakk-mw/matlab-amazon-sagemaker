@@ -1,28 +1,30 @@
-What is this blog about?
+Run MATLAB with Amazon SageMaker using an Example Jupyter Notebook
 ------------------------
 
-This blog talks about how to run MATLAB code inside the [Amazon SageMaker](https://aws.amazon.com/sagemaker/)  environment. This is especially helpful for machine learning, deep learning & computer vision workflows which may require high processing power, easily available via cloud solutions. 
+This blog tells you how to run MATLAB code inside the [Amazon SageMaker](https://aws.amazon.com/sagemaker/) environment.  The blog provides an example Jupyter notebook that you can use in SageMaker to run a deep learning example, and modify for your own appplications.
+This is especially helpful for machine learning, deep learning & computer vision workflows which can require high processing power, that you can easily get with cloud solutions.
 
-Consider a scenario where you have written MATLAB scripts for training & validation on your dataset - but you see your local system is not powerful enough to run these extensive deep learning pipelines. This is where this blog can help you - we show how to take an existing deep learning solution and run it on cloud using Amazon SageMaker. You do not have to spend time configuring your EC2 instances, you can directly launch a Jupyter notebook via SageMaker and can run MATLAB code via Processing jobs in SageMaker. You can also change the instance type of each processing job depending on your task. 
+For example, if you have written MATLAB scripts for training & validation on your data set, but you see your local system is not powerful enough to run these extensive deep learning pipelines, so you need to scale up to the cloud. This blog can help you learn how to take an existing deep learning solution and run it on the cloud using Amazon SageMaker. You do not have to spend time configuring your EC2 instances, because you you can directly launch a Jupyter notebook in SageMaker, and run MATLAB code via Processing jobs in SageMaker. You can also change the instance type of each processing job depending on your task. 
 
-In this blog, we take [this example](https://www.mathworks.com/help/deeplearning/ug/create-simple-deep-learning-network-for-classification.html) from the Deep Learning toolbox in MATLAB - which create a simple Deep Learning Network for classification on image dataset - and run this code on SageMaker using Processing job.
+This blog shows you have to take [this example](https://www.mathworks.com/help/deeplearning/ug/create-simple-deep-learning-network-for-classification.html) from the Deep Learning Toolbox in MATLAB, and run this code on SageMaker using a Processing job. The example creates a simple deep learning network for classification on an image dataset.
 
 
-Launching a SageMaker instance: 
+Launch a SageMaker instance: 
 --------------------------------
 
-Go to [SageMaker console](https://console.aws.amazon.com/sagemaker/home?region=us-east-1#/notebook-instances) and select notebook instances to launch a SageMaker notebook instance. 
+To launch a SageMaker notebook instance, open the [SageMaker console](https://console.aws.amazon.com/sagemaker/home?region=us-east-1#/notebook-instances) and select notebook instances. 
 
-While launching the instance, go to Additional Configurations and increase the volume size of the notebook from default value of 5 GB to 25 GB. Note that the IAM role that you select for the notebook should have the permissions to read from [Amazon S3 buckets](https://s3.console.aws.amazon.com/s3/home) and read/write to [Amazon ECR repositories](https://console.aws.amazon.com/ecr/repositories). Have a look at [this](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.IAM.S3CreatePolicy.html) and [this](https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html) documentation from Amazon on how to set the IAM roles. 
+Before launching the instance, go to Additional Configurations and increase the volume size of the notebook from default value of 5 GB to 25 GB. 
+Note that the IAM role that you select for the notebook must have permission to read from [Amazon S3 buckets](https://s3.console.aws.amazon.com/s3/home) and read/write to [Amazon ECR repositories](https://console.aws.amazon.com/ecr/repositories). For information on setting IAM roles, see the Amazon documentation [here](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.IAM.S3CreatePolicy.html) and [here](https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html). 
 
-Everything else can remain as default values. 
+Leave everything else at the default values. 
 
-Running Jupyter notebook: 
+Run Jupyter notebook: 
 --------------------------
 
-You can go to "Notebook instance" in the SageMaker console and click "Open Jupyter" action to launch a jupyter notebook server inside the SageMaker instance. You can then click the "Upload" button to upload the notebook shipped along with this blog. 
+To launch a Jupyter notebook server inside the SageMaker instance, go to "Notebook instance" in the SageMaker console, and click the action "Open Jupyter". You can then click the "Upload" button to upload the example notebook included with this blog. 
 
-Running MATLAB via Processing Job:
+Run MATLAB via Processing Job:
 ----------------------------------
 
 ```python

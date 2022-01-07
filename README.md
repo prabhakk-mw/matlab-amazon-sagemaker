@@ -19,12 +19,12 @@ Note that the IAM role that you select for the notebook must have permission to 
 
 Leave everything else at the default values. 
 
-Run Jupyter notebook: 
+Upload and Run Example Jupyter notebook 
 --------------------------
 
 To launch a Jupyter notebook server inside the SageMaker instance, go to "Notebook instance" in the SageMaker console, and click the action "Open Jupyter". You can then click the "Upload" button to upload the example notebook included with this blog. 
 
-Run MATLAB via Processing Job:
+Run MATLAB via Processing Job
 ----------------------------------
 
 ```python

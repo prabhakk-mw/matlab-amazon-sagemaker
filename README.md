@@ -6,7 +6,7 @@ This is especially helpful for machine learning, deep learning & computer vision
 
 For example, if you have written MATLAB scripts for training & validation on your data set, but you see your local system is not powerful enough to run these extensive deep learning pipelines, then a solution is to scale up to the cloud. This blog can help you learn how to take an existing deep learning solution and run it on the cloud using Amazon SageMaker. You do not have to spend time configuring your EC2 instances, because you you can directly launch a Jupyter notebook in SageMaker, and run MATLAB code via Processing jobs in SageMaker. You can also change the instance type of each processing job depending on your task. 
 
-This blog shows you have to take [this example](https://www.mathworks.com/help/deeplearning/ug/create-simple-deep-learning-network-for-classification.html) from the Deep Learning Toolbox in MATLAB, and run this code on SageMaker using a Processing job. The example creates a simple deep learning network for classification on an image dataset.
+This blog shows you how to take [this example](https://www.mathworks.com/help/deeplearning/ug/create-simple-deep-learning-network-for-classification.html) from the Deep Learning Toolbox in MATLAB, and run this code on SageMaker using a Processing job. The example creates a simple deep learning network for classification on an image dataset.
 
 
 Launch a SageMaker instance: 

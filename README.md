@@ -22,7 +22,7 @@ Leave everything else at the default values. 
 Upload and Run Example Jupyter notebook 
 --------------------------
 
-To launch a Jupyter notebook server inside the SageMaker instance, go to "Notebook instance" in the SageMaker console, and click the action "Open Jupyter". You can then click the "Upload" button to upload the example notebook included with this blog. 
+To launch a Jupyter notebook server inside the SageMaker instance, go to "Notebook instance" in the SageMaker console, and click the action "Open Jupyter". You can then click the "Upload" button to upload the example notebook included with this blog, which is called `matlab.ipynb`. 
 
 Run MATLAB via Processing Job
 ----------------------------------

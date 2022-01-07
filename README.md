@@ -15,6 +15,7 @@ Launch a SageMaker instance: 
 To launch a SageMaker notebook instance, open the [SageMaker console](https://console.aws.amazon.com/sagemaker/home?region=us-east-1#/notebook-instances) and select notebook instances. 
 
 Before launching the instance, go to Additional Configurations and increase the volume size of the notebook from default value of 5 GB to 25 GB. 
+
 Note that the IAM role that you select for the notebook must have permission to read from [Amazon S3 buckets](https://s3.console.aws.amazon.com/s3/home) and read/write to [Amazon ECR repositories](https://console.aws.amazon.com/ecr/repositories). For information on setting IAM roles, see the Amazon documentation [here](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.IAM.S3CreatePolicy.html) and [here](https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html). 
 
 Leave everything else at the default values. 

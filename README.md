@@ -6,7 +6,7 @@ This is especially helpful for machine learning, deep learning & computer vision
 
 For example, if you have written MATLAB scripts for training & validation on your data set, but you see your local system is not powerful enough to run these extensive deep learning pipelines, then a solution is to scale up to the cloud. This blog can help you learn how to take an existing deep learning solution and run it on the cloud using Amazon SageMaker. You do not have to spend time configuring your EC2 instances, because you you can directly launch a Jupyter notebook in SageMaker, and run MATLAB code via Processing jobs in SageMaker. You can also change the instance type of each processing job depending on your task. 
 
-This blog shows you how to take [this example](https://www.mathworks.com/help/deeplearning/ug/create-simple-deep-learning-network-for-classification.html) from the Deep Learning Toolbox in MATLAB, and run this code on SageMaker using a Processing job. The example creates a simple deep learning network for classification on an image dataset.
+This blog shows you how to take [this example](https://www.mathworks.com/help/deeplearning/ug/create-simple-deep-learning-network-for-classification.html) from the Deep Learning Toolbox in MATLAB, and run this code on SageMaker using a Processing job. The example creates a simple deep learning network for classification on an image dataset. The notebook calls the MATLAB code in batch mode and returns the results. You do not see an interactive MATLAB desktop, just call the code for computation.
 
 
 Launch a SageMaker instance: 
@@ -24,9 +24,11 @@ Upload and Run Example Jupyter notebook 
 --------------------------
 
 To launch a Jupyter notebook server inside the SageMaker instance, go to "Notebook instance" in the SageMaker console, and click the action "Open Jupyter". You can then click the "Upload" button to upload the example notebook included with this blog, which is called `matlab.ipynb`. 
+Open the notebook and follow all the steps in it. Run section by section to understand the steps.
 
 Run MATLAB via Processing Job
 ----------------------------------
+After you complete the steps in the example notebook, you can see how the MATLAB code is called from the notebook, using the following commands.
 
 ```python
 processor = Processor(
@@ -35,7 +37,7 @@ processor = Processor(
 )
 ```
 
-This `processing_repository_uri`  is the URI of our docker image which we generated in the notebook and uploaded to ECR. 
+This `processing_repository_uri`  is the URI of your docker image which you can generate in the notebook and upload to ECR. 
 
 ```bash
 FROM mathworks/matlab-deep-learning
@@ -64,7 +66,7 @@ Finally, in our `processor.run()` command, we mount our local `main.m` to CMD lo
 
   
 
-To summarize: The processing job essentially runs a script  `main.m`  which is mounted to every docker container when it starts. 
+To summarize: The processing job runs a script  `main.m`  which is mounted to every docker container when it starts. 
 
   
 

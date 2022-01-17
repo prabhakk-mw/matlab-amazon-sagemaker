@@ -1,4 +1,4 @@
-Run MATLAB with Amazon SageMaker Using an Example Jupyter Notebook
+Run MATLAB Code From Amazon SageMaker Using an Example Jupyter Notebook
 ------------------------
 
 This blog tells you how to run MATLAB code inside the [Amazon SageMaker](https://aws.amazon.com/sagemaker/) environment.  The blog provides an example Jupyter notebook that you can use in SageMaker to run a deep learning example, and modify it for your own appplications.

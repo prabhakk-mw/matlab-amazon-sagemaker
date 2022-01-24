@@ -45,7 +45,7 @@ USER root
 CMD ["matlab", "-batch", "cd /opt/ml/processing/src_files; main; exit"]
 ```
 
- In our Dockerfile, we changed the `CMD` to run the script located at `/opt/ml/processing/src_file` location. 
+ In the Dockerfile, change the `CMD` to run the script located at `/opt/ml/processing/src_file` location. 
 
 ```python
 processor.run(
@@ -62,11 +62,11 @@ processor.run(
 )
 ```
 
-Finally, in our `processor.run()` command, we mount our local `main.m` to CMD location of the Dockerfile so this scipt is run inside the processing job. 
+Finally, using `processor.run()` command, mount your local `main.m` to `CMD` location of the Dockerfile so this script is run inside the processing job.
 
   
 
-To summarize: The processing job runs a script  `main.m`  which is mounted to every docker container when it starts. 
+To summarize: The processing job runs a script  `main.m` when the Docker container starts by modifying the `CMD` command. 
 
   
 

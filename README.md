@@ -35,7 +35,7 @@ There are 4 different notebooks included with this tutorial.
 |---|---|
 |[setup.ipynb](./setup.ipynb) | Creates MATLAB docker image and publishes it to Amazon ECR. Used in all other notebooks here.|
 |[processing.ipynb](./processing.ipynb) | Trains a deep learning network via [processing jobs](https://docs.aws.amazon.com/sagemaker/latest/dg/processing-job.html). |
-|[training.ipynb](./training.ipynb) | Trains a deep learning network via [training jobs](https://docs.aws.amazon.com/sagemaker/latest/dg/adapt-training-container.html) using spot training to save cost.  [Amazon EC2 Spot instances](https://aws.amazon.com/ec2/spot). Using [Managed spot](https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html) instances for training can optimize costs by upto 90% over on-demand instances.|
+|[training.ipynb](./training.ipynb) | Trains a deep learning network via [training jobs](https://docs.aws.amazon.com/sagemaker/latest/dg/adapt-training-container.html) using spot training to save cost. Using [Managed spot](https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html) instances for training can optimize costs by upto 90% over on-demand instances.|
 |[advanced/tuning.ipynb](./advanced/tuning.ipynb) | Showcases the use of [Parallel Hyperparameter Tuning Jobs](https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html) with MATLAB.|
 
 ### :cloud: Upload and Run Jupyter notebook

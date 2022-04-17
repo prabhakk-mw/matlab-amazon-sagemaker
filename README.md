@@ -12,9 +12,10 @@ You can use Amazon SageMaker to simplify the process of building, training, and 
 This tutorial showcases the usage of SageMaker using Processing and Training jobs with [this example](https://www.mathworks.com/help/deeplearning/ug/create-simple-deep-learning-network-for-classification.html) from the Deep Learning Toolbox in MATLAB.
 The example creates a simple deep learning network for classification on an image dataset.
 
-**Note:**  In this example, MATLAB processes the data in [batch mode](https://www.mathworks.com/help/matlab/matlab_env/commonly-used-startup-options.html), and does not bring up the interactive MATLAB desktop environment. 
+**Note:**  In this example, MATLAB processes the data in [batch mode](https://www.mathworks.com/help/matlab/matlab_env/commonly-used-startup-options.html), and does not bring up the interactive MATLAB desktop environment.
 
 ## :hammer_and_wrench: Setup
+
 ### :computer: Launch a SageMaker instance
 
 To launch a SageMaker notebook instance, open the [SageMaker console](https://console.aws.amazon.com/sagemaker/home?region=us-east-1#/notebook-instances) and select notebook instances.
@@ -40,9 +41,9 @@ There are 4 different notebooks included with this tutorial.
 ### :cloud: Upload and Run Jupyter notebook
 
 * To launch a Jupyter notebook server inside the SageMaker instance:
-    * Go to `Notebook instance` in the SageMaker console,
-    * Click the action `Open Jupyter`.
-    * Click the `Upload` button to upload the example notebooks included with this tutorial.
+  * Go to `Notebook instance` in the SageMaker console,
+  * Click the action `Open Jupyter`.
+  * Click the `Upload` button to upload the example notebooks included with this tutorial.
 
 * Open the notebook and follow all the steps in it. 
 * Run section by section to understand the steps.
@@ -51,13 +52,12 @@ There are 4 different notebooks included with this tutorial.
 
 To avoid incurring unexpected charges, use the AWS Management Console to delete the resources that you created while running the example:
 
-- Open the [Amazon S3 console](https://console.aws.amazon.com/s3/) and then delete the bucket that you created for storing model artifacts and the training dataset.
+* Open the [Amazon S3 console](https://console.aws.amazon.com/s3/) and then delete the bucket that you created for storing model artifacts and the training dataset.
   
-- Open the [Amazon ECR console](https://console.aws.amazon.com/ecr/) and then delete the repository that you created for storing MATLAB docker image container.
+* Open the [Amazon ECR console](https://console.aws.amazon.com/ecr/) and then delete the repository that you created for storing MATLAB docker image container.
   
-- Open the [SageMaker console](https://console.aws.amazon.com/sagemaker/home?#/notebook-instances) and then delete the notebook instance.
+* Open the [SageMaker console](https://console.aws.amazon.com/sagemaker/home?#/notebook-instances) and then delete the notebook instance.
 
 ## Additional resources
 
 * [Amazon SageMaker Examples](https://github.com/aws/amazon-sagemaker-examples)
-  
